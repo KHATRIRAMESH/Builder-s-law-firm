@@ -26,9 +26,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/adminportal" element={<AdminSignin />} />
+          <Route path="/blogpostpage/:postSlug" element={<BlogPostPage />} />
         <Route element={<OnlyAdminPrivateRoute />}>
           <Route path="/createpost" element={<CreatePost />} />
-          <Route path="/blogpostpage/:postSlug" element={<BlogPostPage />} />
           <Route path="/update-post/:postId" element={<UpdatePost />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
