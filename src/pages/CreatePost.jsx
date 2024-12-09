@@ -6,7 +6,11 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../utils/axiosInstance";
 
 const CreatePost = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    title: "",
+    content: "",
+    images: [],
+  });
   const [publishError, setPublishError] = useState();
 
   const navigate = useNavigate();
@@ -25,6 +29,7 @@ const CreatePost = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        withcredentials: true,
       });
       // const data = await res.json();
       // if (!res.ok) {

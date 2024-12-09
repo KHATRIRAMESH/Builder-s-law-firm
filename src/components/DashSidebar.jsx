@@ -42,7 +42,7 @@ const DashSidebar = () => {
       } else {
         dispatch(signOutSuccess());
         // Navigate to login page
-        navigate("/sign-in");
+        navigate("/adminportal");
       }
     } catch (error) {
       console.log(error.message);

@@ -23,12 +23,11 @@ const DashPosts = () => {
         const res = await axiosInstance.get(
           `api/post/getposts?userId=${currentUser._id}`
         );
-        console.log(res);
+        console.log("response",res);
         // const data = await res.json();
 
-        // console.log(data.posts.length);
-
-        if (res.statusText == "OK") {
+        console.log(res.data)
+        if (res.status == 200) {
           setUserPosts(res.data.posts);
           if (res.data.posts.length < 9) {
             setShowMore(false);
@@ -76,7 +75,7 @@ const DashPosts = () => {
               <Table.HeadCell>Date Updated</Table.HeadCell>
               <Table.HeadCell>Post Image</Table.HeadCell>
               <Table.HeadCell>Post Title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
+              {/* <Table.HeadCell>Category</Table.HeadCell> */}
               <Table.HeadCell>Delete</Table.HeadCell>
               <Table.HeadCell>
                 <span>Edit</span>
@@ -108,7 +107,7 @@ const DashPosts = () => {
                     </Link>
                   </Table.Cell>
 
-                  <Table.Cell>{post.category}</Table.Cell>
+                  {/* <Table.Cell>{post.category}</Table.Cell> */}
 
                   <Table.Cell>
                     <span
