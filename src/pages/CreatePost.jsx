@@ -13,8 +13,12 @@ const CreatePost = () => {
   });
   const [publishError, setPublishError] = useState();
 
+  const [filename, setFilename] = useState();
+
   const navigate = useNavigate();
   console.log(formData);
+
+  
 
   const handlesubmit = async (e) => {
     e.preventDefault();
@@ -22,6 +26,9 @@ const CreatePost = () => {
     if (Object.keys(formData).length === 0) {
       return;
     }
+
+  
+    // const data = new FormData();
 
     // Submit form data to your backend here.
     try {
@@ -74,7 +81,13 @@ const CreatePost = () => {
           />
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted  p-3 ">
-          <FileInput type="file" accept="image/*" />
+          <FileInput
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              setFilename(e.target.files[0]);
+            }}
+          />
           <Button type="button" size="sm" outline>
             Upload
           </Button>

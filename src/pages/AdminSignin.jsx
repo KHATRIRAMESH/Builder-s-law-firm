@@ -9,6 +9,9 @@ const SignIn = () => {
   const [formData, setFormData] = useState({});
   const dispatch = useDispatch();
 
+
+// const 
+
   const [loading, setLoading] = useState("");
   const [error, setError] = useState("");
 
@@ -33,21 +36,12 @@ const SignIn = () => {
     try {
       // console.log(formData);
       const res = await axiosInstance.post(`/api/admin/signin`, formData);
-
-      console.log(res);
-      // console.log(res.statusText==="OK");
-
-      // if (!res.statusText === "OK") {
-      //   console.log("signInFailure");
-      // }
-      // console.log(res.data)
-
+      console.log(res.data);
       dispatch(signInSuccess(res.data));
       navigate("/");
     } catch (error) {
-      dispatch(signInFailure(error.response.data.message));
-      // console.log(error);
-      // console.log(error.response.data.message);
+      console.log(error.message);
+      dispatch(signInFailure(error.message));
     }
   };
 
