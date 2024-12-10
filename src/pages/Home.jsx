@@ -6,7 +6,7 @@ import Testimonials from "../components/Testimonial";
 import Newsletter from "../components/Newsletter";
 import Gap from "../components/Gap";
 import Overview from "../components/Overview";
-import Uploadimage from "./Uploadimage";
+// import Uploadimage from "./Uploadimage";
 const Home = () => {
   return (
     <div className="bg-slate-100">
@@ -20,7 +20,7 @@ const Home = () => {
       <Testimonials />
       <Newsletter />
       <Gap />
-      <Uploadimage />
+      {/* <Uploadimage /> */}
     </div>
   );
 };
