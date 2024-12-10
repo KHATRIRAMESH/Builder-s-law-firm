@@ -30,12 +30,12 @@ export default function Blog() {
               ))}
             </div>
             </div>
-            <Link
+            {/* <Link
               to={"/search"}
               className="text-lg text-teal-500 hover:underline text-center"
             >
               View all posts
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>
