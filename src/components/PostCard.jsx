@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function PostCard({ post }) {
-  console.log(post.slug);
+  console.log(post);
 
 
 // Function to extract initial sentences (first two sentences)
 const getInitialSentences = (content) => {
   // Split the content into sentences
+  console.log("Split sentences",content)
   const sentences = content.match(/[^.!?]+[.!?]+/g) || [];
   
   // Return first two sentences, or first sentence if only one exists
