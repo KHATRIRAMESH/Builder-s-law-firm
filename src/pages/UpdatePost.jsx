@@ -9,6 +9,7 @@ import axiosInstance from "../utils/axiosInstance";
 const UpdatePost = () => {
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
+  
 
 
   const navigate = useNavigate();
@@ -29,8 +30,8 @@ const UpdatePost = () => {
 
         setPublishError(null);
 
-        console.log(res.data);
-        setFormData(res.data);
+        console.log(res.data.posts[0]);
+        setFormData(res.data.posts[0]);
 
         // console.log(res.data.posts);
       };
@@ -93,6 +94,7 @@ const UpdatePost = () => {
             placeholder="Title"
             required
             id="title"
+            // defaultValue={}
             className="flex-1"
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })

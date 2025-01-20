@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard.jsx";
 import axiosInstance from "../utils/axiosInstance";
@@ -11,7 +10,7 @@ export default function Blog() {
       const res = await axiosInstance.get(`api/post/getPosts`);
      
       const posts = res.data.posts;
-      setPost(posts);
+    setPost(posts);
     };
     fetchPosts();
   }, []);
